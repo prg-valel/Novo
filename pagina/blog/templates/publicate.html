@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Publicate{% endblock title %}
+
+
+{% block content %} 
+<form method="POST" class="container mt-3">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label"> Nome </label>
+        <input type="text" class="form-control" name="autor">
+    </div>
+    <div class="mb-3">
+        <label for="conteudo" class="form-label"> Comentário </label>
+        <textarea class="form-control" name="conteudo" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary"> Publicar </button>
+</form>
+{% endblock content %}

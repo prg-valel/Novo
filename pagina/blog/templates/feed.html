@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Feed
+{% endblock title %}
+
+{% block content %}
+{% for publi in publis %}
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="mb-1 fw-bold">{{publi.autor}}</div>
+        <div class="mb-1 fw-light">{{publi.data}}</div>
+        <div class="mb-1">{{publi.conteudo}}</div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
