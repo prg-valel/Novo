@@ -5,3 +5,4 @@ class Publi(models.Model):
     autor = models.CharField(max_length=200)
     data = models.DateField()
     conteudo = models.TextField()
+    
