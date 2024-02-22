@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
+def index(request):
+    return HttpResponseRedirect('/feed')
+
 def feed_page(request):
     publis = Publi.objects.all()[::-1]
     return render(request, "feed.html", {
@@ -24,6 +27,8 @@ def publicate_page(request):
         publi.autor = autor
         publi.data = data
         publi.conteudo = conteudo
+        if 'imagem' in request.FILES.keys():
+            publi.imagem = request.FILES['imagem']
         publi.save()
         return HttpResponseRedirect('/feed')
     else:

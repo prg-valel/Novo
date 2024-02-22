@@ -6,6 +6,7 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index),
     path('feed/', views.feed_page),
     path('publicate/', views.publicate_page),
     path('login/', views.login_page),

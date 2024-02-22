@@ -5,4 +5,5 @@ class Publi(models.Model):
     autor = models.CharField(max_length=200)
     data = models.DateField()
     conteudo = models.TextField()
+    imagem = models.ImageField(upload_to='images/', null=True, default=None)
     
